@@ -1,0 +1,17 @@
+{
+    "name": "bancodequestoes/trabalho",
+    "description": "Banco de questoes com mvc",
+    "authors": [
+        {
+            "name": "XandDevWeb",
+            "email": "69404289+XandDevWeb@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"App\\": "../app/",
+    		"Src\\": "../src/"
+    	}
+    }
+}
