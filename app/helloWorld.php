@@ -2,7 +2,7 @@
 
 namespace App;
 
-class helloWorld
+class HelloWorld
 {
 	public function __construct ()
 	{
