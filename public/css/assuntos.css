@@ -1,0 +1,39 @@
+:root
+{
+    --number-grid-columns: 4;
+}
+
+main section
+{
+	display: grid;
+	grid-template-columns: repeat(var(--number-grid-columns), 1fr);
+
+	width: 100%;
+}
+
+main section div.assunto
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-bottom: 45px;
+}
+
+main section div.assunto div.icon-assunto
+{
+	width: 85px;
+	height: 85px;
+
+	border-radius: 50%;
+
+	background-color: #137563;
+}
+
+main section div.assunto span
+{
+	font-family: Roboto;
+	font-weight: 500;
+	font-size: 1rem;
+	letter-spacing: 3px;
+}

@@ -4,11 +4,16 @@ namespace App\Controller;
 
 class ControllerHome
 {
-    public function __construct ()
+    public function home ()
     {
-        echo DIRECTORYPHYSICAL."public/html/index.html";
+        // require_once (DIRECTORYHTML."/index.html");
+        echo "<h1>Você está na página HOME de matérias.</h1><hr><p>Bem vindo!</p>";
     }
     
+    public function assuntos ($index)
+    {
+        echo "<hr><h1>Você está na página Assuntos de matérias {$index}.</h1><hr><p>Olá!</p>";
+    }
 }
 
 ?>

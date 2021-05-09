@@ -135,6 +135,7 @@ header h1
 	text-transform: uppercase;
 	font-size: 3em;
 	letter-spacing: 5px;
+	text-align: center;
 	color: var(--color-header-primary);
 }
 
@@ -199,7 +200,7 @@ main
 
 	color: var( --color-footer-primary );
 
-	padding: 60px 135px 60px 135px;
+	padding: 60px 170px 60px 170px;
 }
 
 main div.path
@@ -210,49 +211,16 @@ main div.path
 	display: flex;
 	align-items: center;
 	letter-spacing: 3px;
-}
 
-main section
-{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-
-	width: 100%;
-}
-
-main section div.materia
-{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	margin-bottom: 45px;
-}
-
-main section div.materia div.icon-materia
-{
-	width: 85px;
-	height: 85px;
-
-	border-radius: 50%;
-
-	background-color: #137563;
-}
-
-main section div.materia span
-{
-	font-family: Roboto;
-	font-weight: 500;
-	font-size: 1rem;
-	letter-spacing: 3px;
+	gap: 10px;
 }
 
 /* Styles of the footer */
 
 footer
 {
-	padding: 10px 0;
-	height: 80px;
+	padding: 20px 0;
 
 	background-color: var( --background-footer-primary );
 
@@ -267,4 +235,101 @@ footer
 
 	text-align: center;
 
+}
+
+/* MOBILE */
+@media screen and (max-width: 900px)
+{
+	header, main, footer, div.path
+	{
+		font-size: .7rem;
+	}
+
+	[name="menu-check"]:checked + section.menu,
+	[name="menu-check"]:checked + section.menu + div.dark
+	{
+
+		position: fixed;
+		top: 70px;
+		left: 0;
+		bottom: 0;
+		right: 20%;
+
+	}
+	[name="menu-check"]:checked + section.menu + div.dark
+	{
+		left: 80%;
+		right: 0;
+		background-color: #00000080;
+	}
+
+	header form
+	{
+		display: none;
+	}
+
+	main
+	{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	main section
+	{
+		grid-template-columns: repeat(calc(var(--number-grid-columns) - 1), 1fr)	
+	}
+
+	main section div.materia div.icon-materia,
+	main section div.assunto div.icon-assunto
+	{
+		width: 70px;
+		height: 70px;
+	}
+}
+
+@media screen and (max-width: 420px)
+{
+	header, main, footer, div.path
+	{
+		font-size: .7rem;
+	}
+
+	header h1
+	{
+		font-size: 1.5rem;
+	}
+
+	main
+	{
+		padding-left: 8px;
+		padding-right: 8px;
+		padding-top: 30px;
+	}
+	main section
+	{
+		grid-template-columns: repeat(calc(var(--number-grid-columns) - 2), 1fr)	
+	}
+
+	main section div.materia div.icon-materia,
+	main section div.assunto div.icon-assunto
+	{
+		width: 70px;
+		height: 70px;
+	}
+}
+
+@media screen and (max-width: 300px)
+{
+	main section div.materia span,
+	main section div.assunto span
+	{
+		font-size: .8rem;
+	}
+	
+	main section div.materia div.icon-materia,
+	main section div.assunto div.icon-assunto
+	{
+		width: 65px;
+		height: 65px;
+	}
 }
