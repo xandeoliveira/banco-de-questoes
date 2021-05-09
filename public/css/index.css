@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@900&display=swap');
+
+:root
+{
+	/* Variables for ligth theme */
+	--background-header-primary: #15AB63;
+	--background-main-primary: #E4E4E4;
+	--background-footer-primary: #C5C0C0;
+
+	--color-header-primary: #FFFFFF;
+	--color-footer-primary: #000000;
+
+	/* Variables for dark theme */
+	--background-header-second: #06331D;
+}
+
+*
+{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	background: none;
+}
+
+a
+{
+	color: var(--color-footer-primary);
+	text-decoration: none;
+}
+
+body
+{
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	position: relative;
+}
+
+/* Styles of the header */
+
+header
+{
+	padding: 0 20px;
+	height: 70px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	position: sticky;
+	top: 0;
+	left: 0;
+
+	color: var( --color-header-primary );
+	background-color: var( --background-header-primary );
+}
+
+
+
+header div.label-menu section,
+header div.label-menu div.dark,
+header div.label-menu [name="menu-check"]
+{
+	display: none;
+}
+
+header div.label-menu section.menu
+{
+	padding: 20px 15px;
+	color: var(--color-footer-primary);
+
+	background-color: var(--background-footer-primary);
+}
+
+ul
+{
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+li
+{
+	padding: 4px;
+	background-color: #00000022;
+}
+
+header div.label-menu label[for="menu-check"]
+{
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+
+	font-family: Roboto;
+	font-size: 1.125em;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+
+	cursor: pointer;
+}
+
+[name="menu-check"]:checked + section.menu,
+[name="menu-check"]:checked + section.menu + div.dark
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	position: fixed;
+	top: 70px;
+	left: 0;
+	bottom: 0;
+	right: 50%;
+
+}
+[name="menu-check"]:checked + section.menu + div.dark
+{
+	left: 50%;
+	right: 0;
+	background-color: #00000080;
+}
+
+header h1
+{
+	font-family: Mada;
+	text-transform: uppercase;
+	font-size: 3em;
+	letter-spacing: 5px;
+	color: var(--color-header-primary);
+}
+
+header form
+{
+	display: flex;
+	align-items: center;
+}
+
+form input,
+form button 
+{
+	outline: none;
+}
+
+header form input
+{
+	padding: 8px 6px;
+	width: 200px;
+	
+	background-color: var( --background-footer-primary );
+
+	border-top-left-radius: 16px; 
+	border-bottom-left-radius: 16px;
+
+}
+header form input:focus
+{
+	box-shadow: 0 0 5px var(--background-header-second);
+}
+
+header form button
+{
+	height: 32px;
+	width: 32px;
+
+	font-size: 18px;
+
+	border: 1px solid #000000;
+	border-top-right-radius: 4px; 
+	border-bottom-right-radius: 4px;
+	
+	cursor: pointer;
+}
+header form button:hover
+{
+	background-color: #0000004d;
+}
+
+/* Styles of the main */
+
+main
+{
+	background-color: var( --background-main-primary );
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 45px;
+
+	color: var( --color-footer-primary );
+
+	padding: 60px 135px 60px 135px;
+}
+
+main div.path
+{
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	letter-spacing: 3px;
+}
+
+main section
+{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	width: 100%;
+}
+
+main section div.materia
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-bottom: 45px;
+}
+
+main section div.materia div.icon-materia
+{
+	width: 85px;
+	height: 85px;
+
+	border-radius: 50%;
+
+	background-color: #137563;
+}
+
+main section div.materia span
+{
+	font-family: Roboto;
+	font-weight: 500;
+	font-size: 1rem;
+	letter-spacing: 3px;
+}
+
+/* Styles of the footer */
+
+footer
+{
+	padding: 10px 0;
+	height: 80px;
+
+	background-color: var( --background-footer-primary );
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	font-family: Roboto;
+	font-size: .8em;
+	letter-spacing: 3px;
+	line-height: 18px;
+
+	text-align: center;
+
+}
