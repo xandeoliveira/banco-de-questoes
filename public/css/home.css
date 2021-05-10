@@ -1,39 +1,51 @@
-:root
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+main
 {
-    --number-grid-columns: 3;
+    justify-content: center !important;
+
+    font-family: Comfortaa;
+    font-size: 1.2rem;
+    text-align: left;
+    letter-spacing: 3px;
+    line-height: 30px;
 }
 
-main section
+main h2
 {
-	display: grid;
-	grid-template-columns: repeat(var(--number-grid-columns), 1fr);
-
-	width: 100%;
+    margin-bottom: 30px;
 }
 
-main section div.materia
+main a button
 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    background-color: var(--background-header-primary);
 
-	margin-bottom: 45px;
+    padding: 12px 28px;
+
+    font-size: 1rem;
+    color: var(--color-footer-primary);
+    font-weight: 500;
+
+    border-radius: 20px 10px 20px 10px;
+
+    cursor: pointer;
 }
 
-main section div.materia div.icon-materia
+@media screen and (max-width: 420px)
 {
-	width: 85px;
-	height: 85px;
+    main h2
+    {
+        text-align: center;
+    }
 
-	border-radius: 50%;
+    main a
+    {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    main a button
+    {
+        transform: scale(.9);
 
-	background-color: #137563;
-}
-
-main section div.materia span
-{
-	font-family: Roboto;
-	font-weight: 500;
-	font-size: 1rem;
-	letter-spacing: 3px;
+    }
 }
