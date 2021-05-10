@@ -1,0 +1,39 @@
+
+main section
+{
+	width: 100%;
+}
+
+main section ul
+{
+	width: 100%;
+}
+
+main section ul li
+{
+	display: flex;
+	justify-content: space-between;
+
+	padding: 8px;
+}
+
+main section ul li .question-icons
+{
+	display: flex;
+	gap: 10px;
+}
+
+main section ul li .question-icons span
+{
+	height: 24px;
+	width: 24px;
+
+	border-radius: 50%;
+
+	text-align: center;
+	font-weight: bold;
+
+	background-color: rgba(255, 255, 255, .4);
+
+	cursor: pointer;
+}
