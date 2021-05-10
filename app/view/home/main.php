@@ -1,57 +1,6 @@
-        <div class="path">
-            <a href="#">Materia</a>
-        </div>
-        <section>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
-            <div class="materia">
-                <div class="icon-materia"></div>
-                <span>nome_materia</span>
-            </div>
+        <section class="presentation">
+            <h2>Home</h2>
+            <p>Facilita Estudos é um banco de questões que te ajuda na parte
+                mais importante para a sua preparação: os exercícios.</p>
         </section>
+        <a href="<?php echo DIRECTORYHOST."materia/"; ?>"><button type="button">Ver Matérias</button></a>
