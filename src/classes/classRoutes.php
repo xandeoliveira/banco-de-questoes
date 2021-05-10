@@ -19,9 +19,9 @@ class ClassRoutes
         $this->route = array(
             "" => "ControllerHome",
             "home" => "ControllerHome",
-            "materias" => "ControllerHome",
-
+            "materia" => "ControllerMateria",
             "assunto" => "ControllerAssunto",
+            "questao" => "ControllerQuestao",
         );
 
         if (array_key_exists($controller, $this->route)) {
@@ -31,7 +31,7 @@ class ClassRoutes
             }
             else
             {
-                return "ControllerHome";
+                return "ControllerMateria";
             }
         }
         else
