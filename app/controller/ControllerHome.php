@@ -9,10 +9,10 @@ class ControllerHome extends ClassRender implements InterfaceView
 {
     public function __construct ()
     {
-        $this->setTitle("Home - Matérias - Facilita Estudos");
-        $this->setDescription("Página onde as matérias ficam listadas.");
+        $this->setTitle("Home - Facilita Estudos");
+        $this->setDescription("Página home do Facilita Estudos.");
         $this->setDirectory("/home");
-        $this->setKeyWords("matérias, facilita estudos, home");
+        $this->setKeyWords("home, facilita estudos");
         
         $this->renderLayout();
     }
