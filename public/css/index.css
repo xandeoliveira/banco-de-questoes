@@ -76,6 +76,11 @@ header div.label-menu section.menu
 	background-color: var(--background-footer-primary);
 }
 
+/* header div.label-menu section.menu label [name="theme"]
+{
+
+} */
+
 ul
 {
 	list-style: none;
