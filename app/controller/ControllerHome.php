@@ -2,17 +2,19 @@
 
 namespace App\Controller;
 
-class ControllerHome
+use Src\Classes\ClassRender;
+use Src\Interfaces\InterfaceView;
+
+class ControllerHome extends ClassRender implements InterfaceView
 {
-    public function home ()
+    public function __construct ()
     {
-        // require_once (DIRECTORYHTML."/index.html");
-        echo "<h1>Você está na página HOME de matérias.</h1><hr><p>Bem vindo!</p>";
-    }
-    
-    public function assuntos ($index)
-    {
-        echo "<hr><h1>Você está na página Assuntos de matérias {$index}.</h1><hr><p>Olá!</p>";
+        $this->setTitle("Home - Matérias - Facilita Estudos");
+        $this->setDescription("Página onde as matérias ficam listadas.");
+        $this->setDirectory("/home");
+        $this->setKeyWords("matérias, facilita estudos, home");
+        
+        $this->renderLayout();
     }
 }
 

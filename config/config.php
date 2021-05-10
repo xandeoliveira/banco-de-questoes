@@ -15,10 +15,11 @@ $internalFolder = "banco-de-questoes/";
     }
 
 # Diretórios Específicos
-    define("DIRECTORYCSS", DIRECTORYPHYSICAL."public/css");
-    define("DIRECTORYJS", DIRECTORYPHYSICAL."public/js");
-    define("DIRECTORYHTML", DIRECTORYPHYSICAL."public/html");
-    define("DIRECTORYFONTES", DIRECTORYPHYSICAL."public/fontes");
+    define("DIRECTORYCSS", DIRECTORYHOST."public/css");
+    define("DIRECTORYJS", DIRECTORYHOST."public/js");
+    define("DIRECTORYHTML", DIRECTORYHOST."public/html");
+    define("DIRECTORYFONTES", DIRECTORYHOST."public/fontes");
+    define("DIRECTORYVIEW", DIRECTORYPHYSICAL."app/view");
 
 # Banco de dados
     define("HOST", "localhost");

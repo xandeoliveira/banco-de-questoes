@@ -2,13 +2,20 @@
 
 namespace App\Controller;
 
-class ControllerAssunto
+use Src\Classes\ClassRender;
+use Src\Interfaces\InterfaceView;
+
+class ControllerAssunto extends ClassRender implements InterfaceView
 {
     public function __construct ()
     {
-        echo "Assunto";
+        $this->setTitle("Assunto - Facilita Estudos");
+        $this->setDescription("Página onde os assuntos estão listados.");
+        $this->setDirectory("/assunto");
+        $this->setKeyWords("assunto, facilita estudos");
+        
+        $this->renderLayout();
     }
-    
 }
 
 ?>
