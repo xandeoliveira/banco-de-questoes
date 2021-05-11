@@ -50,7 +50,6 @@ main a button
     }
     main a button
     {
-        transform: scale(.9);
-
+        padding: 8px 16px;
     }
 }
