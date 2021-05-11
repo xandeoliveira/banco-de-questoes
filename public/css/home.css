@@ -43,11 +43,6 @@ main a button
         text-align: center;
     }
 
-    main a
-    {
-        margin-left: 50%;
-        transform: translateX(-50%);
-    }
     main a button
     {
         padding: 8px 16px;
