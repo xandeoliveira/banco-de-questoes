@@ -33,6 +33,11 @@ main a button
 
 @media screen and (max-width: 420px)
 {
+    main
+    {
+        align-items: center !important;
+    }
+
     main h2
     {
         text-align: center;
