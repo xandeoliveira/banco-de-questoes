@@ -31,7 +31,7 @@ class ClassRoutes
             }
             else
             {
-                return "ControllerMateria";
+                return "ControllerHome";
             }
         }
         else
