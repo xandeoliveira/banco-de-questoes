@@ -70,10 +70,9 @@ header div.label-menu [name="menu-check"]
 
 header div.label-menu section.menu
 {
-	padding: 20px 15px;
 	color: var(--color-footer-primary);
 
-	background-color: var(--background-footer-primary);
+	background-color: var(--background-header-primary);
 }
 
 /* header div.label-menu section.menu label [name="theme"]
@@ -87,7 +86,6 @@ ul
 
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
 
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -95,8 +93,15 @@ ul
 
 li
 {
-	padding: 4px;
-	background-color: #00000022;
+	padding:  20px 0; 
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--color-header-primary);
+}
+li:hover
+{
+	color: var(--background-header-primary);
+	background-color: var(--color-header-primary);
 }
 
 header div.label-menu label[for="menu-check"]
@@ -124,12 +129,11 @@ header div.label-menu label[for="menu-check"]
 	top: 70px;
 	left: 0;
 	bottom: 0;
-	right: 50%;
-
+	right: 70%;
 }
 [name="menu-check"]:checked + section.menu + div.dark
 {
-	left: 50%;
+	left: 30%;
 	right: 0;
 	background-color: #00000080;
 }
