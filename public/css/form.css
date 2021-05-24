@@ -1,0 +1,93 @@
+main.container-form,
+form.new
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+form.new
+{
+    background-color: var(--background-footer-primary);
+    font-family: Roboto;
+
+    width: 70%;
+    padding: 30px 0;
+
+    justify-content: flex-start;
+    flex-direction: column;
+
+    border-radius: 12px;
+}
+
+form.new h2
+{
+    margin-bottom: 15px;
+}
+
+form.new fieldset
+{
+    width: 90%;
+    padding: 8px;
+    border: 2px solid var(--background-header-primary);
+    border-radius: 10px 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form.new fieldset label
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+form.new input,
+form.new textarea
+{
+    border: 2px solid var(--background-header-primary);
+    padding: 0 12px;
+    border-radius: 10px 5px;
+}
+
+form.new input
+{ height: 30px; }
+
+form.new textarea
+{ resize: none; }
+
+form.new input[type="file"] { border: none; }
+
+form.new button
+{
+    width: 40%;
+    height: 36px;
+    
+    margin-top: 30px;
+    background-color: var(--background-header-primary);
+    border-radius: 18px;
+    
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    
+    cursor: pointer;
+    transition: .2s;
+}
+
+form.new button:hover
+{
+    transform: scale(1.02);
+}
+
+main.container-form div.links
+{
+    display: flex;
+    gap: 8px;
+}
+
+main.container-form div.links a
+{ text-decoration: underline; }
