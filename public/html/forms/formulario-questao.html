@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilita Estudos - Nova Questão</title>
+    
+    <link rel="stylesheet" href="../../css/form.css" >
+    <link rel="stylesheet" href="../../css/index.css" >
+</head>
+<body>
+    <header>
+        <div class="label-menu">
+            <label for="menu-check">
+                <span>&#9776;</span>
+                <span>menu</span>
+            </label>
+            <input type="checkbox" name="menu-check" id="menu-check">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <a href="#" ><li>olha aqui so 1 besteirinha que eu escrevi</li></a>
+                        <a href="#" ><li>olha aqui so 2 besteirinha que eu escrevi</li></a>
+                        <a href="#" ><li>olha aqui so 3 besteirinha que eu escrevi</li></a>
+                        <a href="#" ><li>olha aqui so 4 besteirinha que eu escrevi</li></a>
+                        <a href="#" ><li>olha aqui so 5 besteirinha que eu escrevi</li></a>
+                        <a href="#" ><li>olha aqui so 6 besteirinha que eu escrevi</li></a>
+                        <a href="#" ><li>olha aqui so 7 besteirinha que eu escrevi</li></a>
+                    </ul>
+                </nav>
+                <label>
+                    <input type="checkbox" name="theme">
+                    Modo noturno
+                </label>
+            </section>
+            <div class="dark"></div>
+        </div>
+
+        <a href="./home.html">
+            <h1>facilita estudos</h1>
+        </a>
+
+        <form action="#" method="get">
+            <input type="search" name="search" placeholder="Buscar Questão" >
+            <button type="submit">&#128269;</button>
+        </form>
+        
+    </header>
+    <main class="container-form">
+        <form class="new" action="#" method="get" enctype="multipart/form-data">
+            <h2>Nova Questão</h2>
+            <fieldset>
+                <legend>Questão</legend>
+                <label>
+                    Enunciado
+                    <textarea
+                        name="enuciado"
+                        placeholder="Enunciado. Caso a Questão só tenha comando este campo deve ser vazio."
+                        rows="5"
+                    ></textarea>
+                </label>
+                <label>
+                    Imagem
+                    <input type="file" name="imagem">
+                </label>
+                <label>
+                    Comando
+                    <textarea
+                        name="comando"
+                        placeholder="Comando. Pergunta principal da Questão."
+                        rows="3"
+                    ></textarea>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Resposta</legend>
+                <label>
+                    Alternativa A
+                    <input type="text" name="a" placeholder="Texto da alternativa A">
+                </label>
+                <label>
+                    Alternativa B
+                    <input type="text" name="b" placeholder="Texto da alternativa B">
+                </label>
+                <label>
+                    Alternativa C
+                    <input type="text" name="c" placeholder="Texto da alternativa C">
+                </label>
+                <label>
+                    Alternativa D
+                    <input type="text" name="d" placeholder="Texto da alternativa D">
+                </label>
+                <label>
+                    Alternativa E
+                    <input type="text" name="e" placeholder="Texto da alternativa E">
+                </label>
+            </fieldset>
+            <button type="submit">Salvar</button>
+        </form>
+        <div class="links">
+            <a href="./formulario-materia.html">Nova Matéria<a> |
+            <a href="./formulario-assunto.html">Novo Assunto<a>
+        </div>
+    </main>
+    <footer>
+        <p>
+            Banco de Questões <br>
+            Desenvolvido por alunos da:
+        </p>
+        <p>Escola Estadual de Educação Profissional José Ivanilton Nocrato - Guaiuba - CE</p>
+    </footer>
+</body>
+</html>
