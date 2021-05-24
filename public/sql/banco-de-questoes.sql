@@ -105,7 +105,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`resposta` (
   `i_id_resposta` INT NOT NULL,
   `s_gabarito_resposta` ENUM("a,b,c,d,e") NOT NULL,
-  `s_explicacao_respostal` TEXT NOT NULL,
+  `s_explicacao_resposta` TEXT NOT NULL,
   PRIMARY KEY (`i_id_resposta`))
 ENGINE = InnoDB;
 
