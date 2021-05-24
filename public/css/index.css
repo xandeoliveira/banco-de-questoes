@@ -138,6 +138,9 @@ header div.label-menu label[for="menu-check"]
 	background-color: #00000080;
 }
 
+header a
+{ outline: none; }
+
 header h1
 {
 	font-family: Mada;
