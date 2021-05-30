@@ -22,6 +22,8 @@ class ClassRoutes
             "materia" => "ControllerMateria",
             "assunto" => "ControllerAssunto",
             "questao" => "ControllerQuestao",
+            "login" => "ControllerLogin",
+            "cadastro" => "ControllerCadastro",
         );
 
         if (array_key_exists($controller, $this->route)) {
