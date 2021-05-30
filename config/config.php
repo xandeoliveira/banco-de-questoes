@@ -18,7 +18,8 @@ $internalFolder = "banco-de-questoes/";
     define("DIRECTORYCSS", DIRECTORYHOST."public/css");
     define("DIRECTORYJS", DIRECTORYHOST."public/js");
     define("DIRECTORYHTML", DIRECTORYHOST."public/html");
-    define("DIRECTORYFONTES", DIRECTORYHOST."public/fontes");
+    define("DIRECTORYFONTS", DIRECTORYHOST."public/fontes");
+    define("DIRECTORYIMG", DIRECTORYHOST."public/img");
     define("DIRECTORYVIEW", DIRECTORYPHYSICAL."app/view");
 
 # Banco de dados
