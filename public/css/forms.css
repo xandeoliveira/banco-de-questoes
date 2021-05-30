@@ -1,0 +1,83 @@
+main.container-form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    
+    border-radius: 10px;
+    padding: 15px;
+    
+    width: 500px;
+
+    font-family: Roboto;
+
+    background-color: var(--background-footer-primary);
+}
+main form h2
+{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+main form span
+{
+    width: 100%;
+    position: relative;
+}
+main form input,
+main form button
+{
+    width: 100%;
+    
+    border: 1px solid var(--background-header-primary);
+    border-radius: 18px 9px 18px 9px;
+    
+    font-size: 14px;
+    padding: 15px 35px 15px 4px;
+}
+main form button
+{
+    width: 180px;
+    height: 48px;
+    
+    border-radius: 25px;
+    
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    
+    background-color:var(--background-header-primary);
+    margin-top: 30px;
+    padding: 10px;
+    
+    cursor: pointer;
+}
+main form img
+{
+    height: 32px;
+    position: absolute;
+    top: 7px;
+    right: 3px;
+}
+main form a
+{
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+@media screen and ( max-width: 420px )
+{
+    main form { width: 270px }
+}
