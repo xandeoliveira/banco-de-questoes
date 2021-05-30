@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema banco-de-questoes
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema banco-de-questoes
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `banco-de-questoes` DEFAULT CHARACTER SET utf8 ;
+USE `banco-de-questoes` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Pessoa`
+-- Table `banco-de-questoes`.`Pessoa`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Pessoa` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`Pessoa` (
   `i_id_pessoa` INT NOT NULL,
   `s_nome_pessoa` VARCHAR(60) NOT NULL,
   `s_login_pessoa` VARCHAR(80) NOT NULL,
@@ -31,9 +31,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`sala`
+-- Table `banco-de-questoes`.`sala`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`sala` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`sala` (
   `i_id_Sala` INT NOT NULL,
   `s_nome_sala` VARCHAR(60) NOT NULL,
   `i_id_pessoa_sala` INT NOT NULL,
@@ -42,9 +42,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`prova`
+-- Table `banco-de-questoes`.`prova`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`prova` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`prova` (
   `i_id_prova` INT NOT NULL,
   `s_cabecalho_prova` TEXT NOT NULL,
   PRIMARY KEY (`i_id_prova`))
@@ -52,9 +52,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`sala_prova`
+-- Table `banco-de-questoes`.`sala_prova`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`sala_prova` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`sala_prova` (
   `i_sala` INT NOT NULL,
   `i_prova` INT NOT NULL,
   `sala_i_id_Sala` INT NOT NULL,
@@ -64,21 +64,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`sala_prova` (
   INDEX `fk_sala_prova_prova1_idx` (`prova_i_id_prova` ASC) VISIBLE,
   CONSTRAINT `fk_sala_prova_sala1`
     FOREIGN KEY (`sala_i_id_Sala`)
-    REFERENCES `mydb`.`sala` (`i_id_Sala`)
+    REFERENCES `banco-de-questoes`.`sala` (`i_id_Sala`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_sala_prova_prova1`
     FOREIGN KEY (`prova_i_id_prova`)
-    REFERENCES `mydb`.`prova` (`i_id_prova`)
+    REFERENCES `banco-de-questoes`.`prova` (`i_id_prova`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`sala_aluno`
+-- Table `banco-de-questoes`.`sala_aluno`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`sala_aluno` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`sala_aluno` (
   `i_sala` INT NOT NULL,
   `i_aluno` INT NOT NULL,
   `sala_i_id_Sala` INT NOT NULL,
@@ -88,21 +88,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`sala_aluno` (
   INDEX `fk_sala_aluno_Pessoa1_idx` (`Pessoa_i_id_pessoa` ASC) VISIBLE,
   CONSTRAINT `fk_sala_aluno_sala1`
     FOREIGN KEY (`sala_i_id_Sala`)
-    REFERENCES `mydb`.`sala` (`i_id_Sala`)
+    REFERENCES `banco-de-questoes`.`sala` (`i_id_Sala`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_sala_aluno_Pessoa1`
     FOREIGN KEY (`Pessoa_i_id_pessoa`)
-    REFERENCES `mydb`.`Pessoa` (`i_id_pessoa`)
+    REFERENCES `banco-de-questoes`.`Pessoa` (`i_id_pessoa`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`resposta`
+-- Table `banco-de-questoes`.`resposta`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`resposta` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`resposta` (
   `i_id_resposta` INT NOT NULL,
   `s_gabarito_resposta` ENUM("a,b,c,d,e") NOT NULL,
   `s_explicacao_resposta` TEXT NOT NULL,
@@ -111,9 +111,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`disciplina`
+-- Table `banco-de-questoes`.`disciplina`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`disciplina` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`disciplina` (
   `i_id_disciplina` INT NOT NULL,
   `s_nome_disciplina` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`i_id_disciplina`))
@@ -121,9 +121,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`assunto`
+-- Table `banco-de-questoes`.`assunto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`assunto` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`assunto` (
   `i_id_assunto` INT NOT NULL,
   `s_nome_assunto` VARCHAR(35) NOT NULL,
   `disciplina_i_id_disciplina` INT NOT NULL,
@@ -131,16 +131,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`assunto` (
   INDEX `fk_assunto_disciplina_idx` (`disciplina_i_id_disciplina` ASC) VISIBLE,
   CONSTRAINT `fk_assunto_disciplina`
     FOREIGN KEY (`disciplina_i_id_disciplina`)
-    REFERENCES `mydb`.`disciplina` (`i_id_disciplina`)
+    REFERENCES `banco-de-questoes`.`disciplina` (`i_id_disciplina`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`questao`
+-- Table `banco-de-questoes`.`questao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`questao` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`questao` (
   `i_id_questao` INT NOT NULL,
   `s_enunciado_questao` TEXT NOT NULL,
   `s_comando_questao` TEXT NOT NULL,
@@ -155,21 +155,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`questao` (
   INDEX `fk_questao_assunto1_idx` (`assunto_i_id_assunto1` ASC, `assunto_disciplina_i_id_disciplina1` ASC) VISIBLE,
   CONSTRAINT `fk_questao_resposta1`
     FOREIGN KEY (`resposta_i_id_resposta`)
-    REFERENCES `mydb`.`resposta` (`i_id_resposta`)
+    REFERENCES `banco-de-questoes`.`resposta` (`i_id_resposta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_questao_assunto1`
     FOREIGN KEY (`assunto_i_id_assunto1` , `assunto_disciplina_i_id_disciplina1`)
-    REFERENCES `mydb`.`assunto` (`i_id_assunto` , `disciplina_i_id_disciplina`)
+    REFERENCES `banco-de-questoes`.`assunto` (`i_id_assunto` , `disciplina_i_id_disciplina`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`prova_questoes`
+-- Table `banco-de-questoes`.`prova_questoes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`prova_questoes` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`prova_questoes` (
   `i_prova` INT NOT NULL,
   `i_questoes` INT NOT NULL,
   `questao_i_id_questao` INT NOT NULL,
@@ -179,31 +179,31 @@ CREATE TABLE IF NOT EXISTS `mydb`.`prova_questoes` (
   INDEX `fk_prova_questoes_prova1_idx` (`prova_i_id_prova` ASC) VISIBLE,
   CONSTRAINT `fk_prova_questoes_questao1`
     FOREIGN KEY (`questao_i_id_questao`)
-    REFERENCES `mydb`.`questao` (`i_id_questao`)
+    REFERENCES `banco-de-questoes`.`questao` (`i_id_questao`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_prova_questoes_prova1`
     FOREIGN KEY (`prova_i_id_prova`)
-    REFERENCES `mydb`.`prova` (`i_id_prova`)
+    REFERENCES `banco-de-questoes`.`prova` (`i_id_prova`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`disciplina_assunto`
+-- Table `banco-de-questoes`.`disciplina_assunto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`disciplina_assunto` (
-  `i_disciplina` INT NULL,
-  `i_assunto` INT NULL,
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`disciplina_assunto` (
+  `i_disciplina` INT NOT NULL,
+  `i_assunto` INT NOT NULL,
   PRIMARY KEY (`i_disciplina`, `i_assunto`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`resposta_opcao`
+-- Table `banco-de-questoes`.`resposta_opcao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`resposta_opcao` (
+CREATE TABLE IF NOT EXISTS `banco-de-questoes`.`resposta_opcao` (
   `i_resposta_opcao` INT NOT NULL,
   `s_item_resposta_opcao` CHAR(1) NOT NULL,
   `s_valor_resposta_opcao` TEXT NOT NULL,
@@ -212,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`resposta_opcao` (
   INDEX `fk_resposta_opcao_resposta1_idx` (`resposta_i_id_resposta` ASC) VISIBLE,
   CONSTRAINT `fk_resposta_opcao_resposta1`
     FOREIGN KEY (`resposta_i_id_resposta`)
-    REFERENCES `mydb`.`resposta` (`i_id_resposta`)
+    REFERENCES `banco-de-questoes`.`resposta` (`i_id_resposta`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
