@@ -10,9 +10,9 @@
 
     <title><?php echo $this->getTitle(); ?></title>
 
-    <?php echo $this->addHead(); ?>
-
+    
     <link rel="stylesheet" href="<?php echo DIRECTORYCSS; ?>/index.css" >
+    <?php echo $this->addHead(); ?>
 </head>
 <body>
     <header>
@@ -25,13 +25,12 @@
             <section class="menu">
                 <nav>
                     <ul>
-                        <a href="#" ><li>olha aqui so 1 besteirinha que eu escrevi</li></a>
-                        <a href="#" ><li>olha aqui so 2 besteirinha que eu escrevi</li></a>
-                        <a href="#" ><li>olha aqui so 3 besteirinha que eu escrevi</li></a>
-                        <a href="#" ><li>olha aqui so 4 besteirinha que eu escrevi</li></a>
-                        <a href="#" ><li>olha aqui so 5 besteirinha que eu escrevi</li></a>
-                        <a href="#" ><li>olha aqui so 6 besteirinha que eu escrevi</li></a>
-                        <a href="#" ><li>olha aqui so 7 besteirinha que eu escrevi</li></a>
+                        <a href="<?php echo DIRECTORYHOST."home/"; ?>"><li>Home</li></a>
+                        <a href="<?php echo DIRECTORYHOST."materia/"; ?>"><li>Matérias</li></a>
+                        <a href="<?php echo DIRECTORYHOST."assunto/"; ?>"><li>Assuntos</li></a>
+                        <a href="<?php echo DIRECTORYHOST."questao/"; ?>"><li>Questões</li></a>
+                        <a href="<?php echo DIRECTORYHOST."cadastro/"; ?>"><li>Cadastro</li></a>
+                        <a href="<?php echo DIRECTORYHOST."login/"; ?>"><li>Login</li></a>
                     </ul>
                 </nav>
                 <label>
@@ -53,14 +52,14 @@
 
         <?php echo $this->addHeader(); ?>
     </header>
-    <main>
+
         <?php echo $this->addMain(); ?>
-    </main>
+        
     <footer>
         <p>
             2021 - Todos os direitos reservados
         </p>
-        <p>Alexandre, Nicolas, Madalena, Vinícius, Allan</p>
+        <p>Alexandre, Nicolas, Madalena, Vinícius e Allan</p>
         
         <?php echo $this->addFooter(); ?>
     </footer>
