@@ -93,12 +93,12 @@
                         <span>&#10003;</span>
                     </div>
                 </li>
-                <li>
-                    <span>15 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
+
+                <a href="<?php echo DIRECTORYHOST."questao-cadastrar/"; ?>">
+                    <li class="novo">
+                        Adicionar uma questão
+                    </li>
+                </a>
             </ul>
         </section>
 

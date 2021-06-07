@@ -1,13 +1,23 @@
 <main class="container-form">
-    <form class="new" action="#" method="get">
+    <form class="new" action="<?php echo DIRECTORYHOST."cadastro/novo"; ?>" method="post">
         <h2>cadastro</h2>
         <span>
             <input
-                type="email"
-                name="email"
-                placeholder="seu e-mail"
+                type="text"
+                name="name"
+                placeholder="seu nome"
                 minlength="1"
                 maxlength="60"
+            >
+            <img src="<?php echo DIRECTORYIMG."/human.svg"; ?>">
+        </span>
+        <span>
+            <input
+                type="email"
+                name="login"
+                placeholder="seu e-mail"
+                minlength="1"
+                maxlength="80"
             >
             <img src="<?php echo DIRECTORYIMG."/email.svg"; ?>">
         </span>

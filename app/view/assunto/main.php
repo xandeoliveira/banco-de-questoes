@@ -141,12 +141,13 @@
                     <span>nome_assunto</span>
                 </a>
             </div>
-            <div class="assunto">
-                <a href="<?php echo DIRECTORYHOST."questao/"; ?>">
+
+            <div class="assunto novo">
+                <a href="<?php echo DIRECTORYHOST."assunto-cadastrar/"; ?>">
                     <div class="icon-assunto"></div>
                 </a>
-                <a href="<?php echo DIRECTORYHOST."questao/"; ?>">
-                    <span>nome_assunto</span>
+                <a href="<?php echo DIRECTORYHOST."assunto-cadastrar/"; ?>">
+                    <span>novo assunto</span>
                 </a>
             </div>
         </section>

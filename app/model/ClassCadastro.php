@@ -1,23 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Model;
 
-use Src\Classes\ClassRender;
 use App\Model\ClassConnection;
 
-class ControllerCadastro extends ClassConnection
+class ClassCadastro extends ClassConnection
 {
-    public function __construct ()
-    {
-        $render = new ClassRender();
-        $render->setTitle("Cadastro - Facilita Estudos");
-        $render->setDescription("Página de cadastro de alunos Facilita Estudos.");
-        $render->setDirectory("/forms/cadastro");
-        $render->setKeyWords("cadastro, facilita estudos");
-        
-        $render->renderLayout();
-    }
-
     private function getSql ()
     {
         if ( ! isset( $_POST ) ) return;
@@ -29,6 +17,8 @@ class ControllerCadastro extends ClassConnection
         
         return
             "INSERT INTO `pessoa`(`s_nome_pessoa`, `s_login_pessoa`, `s_senha_pessoa`) VALUES ('$name', '$login', '$password')";
+        // "INSERT INTO pessoa ( s_nome_pessoa, s_login_pessoa, s_senha_pessoa ) VALUES ( '".$name."', '".$login."', '".$password."' )";
+            // "INSERT INTO `pessoa`(`s_nome_pessoa`, `s_login_pessoa`, `s_senha_pessoa`) VALUES (\'$name\', \'$login\', \'$password\')";
     }
 
     public function novo ()
@@ -36,7 +26,7 @@ class ControllerCadastro extends ClassConnection
         $connection = $this->getConnection();
         $sql = $this->getSql();
         
-        $inserted = $connection->query( $sql );
+        $inserted = $connection->query( $sql )
         $connection->close();
         
         return $inserted
@@ -44,5 +34,4 @@ class ControllerCadastro extends ClassConnection
             : "Não foi possível completar o cadastro.";
     }
 }
-
 ?>

@@ -39,3 +39,10 @@ main section ul li .question-icons span
 
 	cursor: pointer;
 }
+
+main section ul li.novo
+{
+	background-color: #222222;
+	color: #ffffff !important;
+	justify-content: center;
+}

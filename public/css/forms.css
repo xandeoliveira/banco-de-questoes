@@ -25,27 +25,41 @@ main form h2
 {
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 
     margin-bottom: 15px;
 }
-main form span
+main form fieldset
 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     width: 100%;
-    position: relative;
 }
+main form fieldset legend
+{
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+main form label
+{ margin-top: 6px; }
 main form input,
+main form textarea,
+main form select,
 main form button
 {
+    margin-top: 4px;
     width: 100%;
     
     border: 1px solid var(--background-header-primary);
     border-radius: 18px 9px 18px 9px;
     
     font-size: 14px;
-    padding: 15px 35px 15px 4px;
+    padding: 10px 35px 10px 4px;
 }
+input[type="file"] { border: none }
 main form button
 {
     width: 180px;

@@ -16,8 +16,13 @@ main section div.materia
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
+	
 	margin-bottom: 45px;
+}
+
+main section div.materia.nova a div.icon-materia
+{
+	background-color: #222222
 }
 
 main section div.materia div.icon-materia

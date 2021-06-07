@@ -16,8 +16,13 @@ main section div.assunto
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
+	
 	margin-bottom: 45px;
+}
+
+main section div.assunto.novo a div.icon-assunto
+{
+	background-color: #222222
 }
 
 main section div.assunto div.icon-assunto
