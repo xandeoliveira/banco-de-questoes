@@ -22,7 +22,7 @@ main section div.materia
 
 main section div.materia.nova a div.icon-materia
 {
-	background-color: #222222
+	background-color: #222222;
 }
 
 main section div.materia div.icon-materia
@@ -33,6 +33,9 @@ main section div.materia div.icon-materia
 	border-radius: 50%;
 
 	background-color: #137563;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 main section div.materia span

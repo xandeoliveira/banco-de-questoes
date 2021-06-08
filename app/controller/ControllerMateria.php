@@ -3,18 +3,29 @@
 namespace App\Controller;
 
 use Src\Classes\ClassRender;
-use Src\Interfaces\InterfaceView;
+use App\Model\ClassConnection;
 
-class ControllerMateria extends ClassRender implements InterfaceView
+class ControllerMateria extends ClassConnection
 {
     public function __construct ()
     {
-        $this->setTitle("Matérias - Facilita Estudos");
-        $this->setDescription("Página onde as matérias ficam listadas.");
-        $this->setDirectory("/materia");
-        $this->setKeyWords("matérias, facilita estudos");
+        $render = new ClassRender();
+        $render->setTitle("Matérias - Facilita Estudos");
+        $render->setDescription("Página onde as matérias ficam listadas.");
+        $render->setDirectory("/materia");
+        $render->setKeyWords("matérias, facilita estudos");
         
-        $this->renderLayout();
+        $render->renderLayout();
+    }
+
+    public function listGridMaterias ()
+    {
+        $sql = "SELECT * FROM disciplina";
+        $connection = $this->getConnection();
+        $response = $connection->query( $sql );
+        $connection->close();
+        
+        return $response->num_rows > 0 ? $response : false;
     }
 }
 

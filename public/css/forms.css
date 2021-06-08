@@ -91,6 +91,21 @@ main form a
     text-decoration: underline;
 }
 
+main form fieldset button.add-alt
+{
+    width: 100%;
+    height: auto;
+    padding: 6px;
+    text-transform: lowercase;
+}
+
+main form div.alternatives
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 @media screen and ( max-width: 420px )
 {
     main form { width: 270px }

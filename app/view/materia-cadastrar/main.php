@@ -1,5 +1,6 @@
 <main class="container-form">
-    <form class="new" action="<?php echo DIRECTORYHOST."materia-cadastrar/novo"; ?>" method="post">
+    <form class="new" action="<?php echo DIRECTORYHOST."materia-cadastrar/novo"; ?>" method="post"
+    enctype="multipart/form-data">
         <h2>Nova Matéria</h2>
         <label>
             Matéria
@@ -10,6 +11,9 @@
                 minlength="1"
                 maxlength="30"
             >
+        </label>
+        <label>
+            <input type="file" name="imagem">
         </label>
         <button type="submit">Salvar</button>
     </form>

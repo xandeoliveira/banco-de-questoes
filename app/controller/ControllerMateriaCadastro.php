@@ -27,10 +27,27 @@ class ControllerMateriaCadastro extends ClassConnection
         return ucfirst( $materia );
     }
 
+    private function getImage ()
+    {
+        $image = $_FILES["imagem"]["tmp_name"];
+
+        $isAEmpty = empty( $image );
+        if ( $isAEmpty )
+            return false;
+
+        $file = fopen($image, "rb");
+        $readFile = fread($file, filesize($image));
+        $content = addslashes($readFile);   
+        fclose($file);
+
+        return $content;
+    }
+
     public function novo ()
     {
         $name = $this->getPost();
-        $sql = "INSERT INTO disciplina (s_nome_disciplina) VALUES ('$name')";
+        $image = $this->getImage();
+        $sql = "INSERT INTO disciplina (s_nome_disciplina, b_image_disciplina) VALUES ('$name', '$image')";
 
         $connection = $this->getConnection();
         $return = $connection->query( $sql );

@@ -6,7 +6,7 @@
             <label>
                 Enunciado
                 <textarea
-                    name="enuciado"
+                    name="enunciado"
                     placeholder="Enunciado. Caso a Questão só tenha comando este campo deve ser vazio."
                     rows="5"
                 ></textarea>
@@ -24,28 +24,37 @@
                 ></textarea>
             </label>
         </fieldset>
-        <fieldset>
+
+        <fieldset class="responses">
             <legend>Resposta</legend>
+            
+            <input type="hidden" name="alternatives" value="1">
+            
+            <div class="alternatives">
+                <label>
+                    Digite o conteúdo da alternativa:
+                    <input type="text" name="a" placeholder="Texto da alternativa">
+                </label>
+                
+            </div>
+            <button type="button" class="add-alt">Adicionar Alternativa</button>
+            
             <label>
-                Alternativa A
-                <input type="text" name="a" placeholder="Texto da alternativa A">
+                Gabarito:
+                <select name="gabarito">
+                    <option value="">Escolha</option>
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                    <option value="d">d</option>
+                    <option value="e">e</option>
+                </select>
             </label>
             <label>
-                Alternativa B
-                <input type="text" name="b" placeholder="Texto da alternativa B">
+                Explicação:
+                <textarea name="explicacao" placeholder="Explicação. Por que esta resposta é correta?"></textarea>
             </label>
-            <label>
-                Alternativa C
-                <input type="text" name="c" placeholder="Texto da alternativa C">
-            </label>
-            <label>
-                Alternativa D
-                <input type="text" name="d" placeholder="Texto da alternativa D">
-            </label>
-            <label>
-                Alternativa E
-                <input type="text" name="e" placeholder="Texto da alternativa E">
-            </label>
+
         </fieldset>
         <fieldset>
             <legend>Pertence a:</legend>
@@ -97,5 +106,5 @@
         <a href="<?php echo DIRECTORYHOST."assunto-cadastrar/"; ?>">Novo Assunto<a>
     </div>
 
-    <script src="<?php echo DIRECTORYJS."/formNemQuestion.js"; ?>"></script>
+    <script src="<?php echo DIRECTORYJS."/formNewQuestion.js"; ?>"></script>
 </main>
