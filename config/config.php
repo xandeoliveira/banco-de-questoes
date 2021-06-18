@@ -21,6 +21,7 @@ $internalFolder = "banco-de-questoes/";
     define("DIRECTORYFONTS", DIRECTORYHOST."public/fontes");
     define("DIRECTORYIMG", DIRECTORYHOST."public/img");
     define("DIRECTORYVIEW", DIRECTORYPHYSICAL."app/view");
+    define("DIRECTORYINCLUDES", DIRECTORYPHYSICAL."src/includes");
 
 # Banco de dados
     define("HOST", "localhost");

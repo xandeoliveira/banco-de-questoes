@@ -11,7 +11,7 @@ main section
 	width: 100%;
 }
 
-main section div.assunto
+main section .assunto
 {
 	display: flex;
 	flex-direction: column;
@@ -20,12 +20,12 @@ main section div.assunto
 	margin-bottom: 45px;
 }
 
-main section div.assunto.novo a div.icon-assunto
+main section .assunto.novo a .icon-assunto
 {
 	background-color: #222222
 }
 
-main section div.assunto div.icon-assunto
+main section .assunto .icon-assunto
 {
 	width: 85px;
 	height: 85px;
@@ -35,7 +35,8 @@ main section div.assunto div.icon-assunto
 	background-color: #137563;
 }
 
-main section div.assunto span
+main section .assunto input,
+main section .assunto span
 {
 	font-family: Roboto;
 	font-weight: 500;

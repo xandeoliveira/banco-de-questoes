@@ -27,10 +27,9 @@
                     <ul>
                         <a href="<?php echo DIRECTORYHOST."home/"; ?>"><li>Home</li></a>
                         <a href="<?php echo DIRECTORYHOST."materia/"; ?>"><li>Matérias</li></a>
-                        <a href="<?php echo DIRECTORYHOST."assunto/"; ?>"><li>Assuntos</li></a>
-                        <a href="<?php echo DIRECTORYHOST."questao/"; ?>"><li>Questões</li></a>
                         <a href="<?php echo DIRECTORYHOST."cadastro/"; ?>"><li>Cadastro</li></a>
                         <a href="<?php echo DIRECTORYHOST."login/"; ?>"><li>Login</li></a>
+                        <a href="<?php echo DIRECTORYHOST."logout/"; ?>"><li>Logout</li></a>
                     </ul>
                 </nav>
                 <label>

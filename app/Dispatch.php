@@ -7,13 +7,13 @@ use Src\Classes\ClassRoutes;
 class Dispatch extends ClassRoutes
 {
     private $method;
-    private $parameter = [];
+    private $parameter = array();
     private $controller;
 
     # Construct do Dispatch
     public function __construct ()
     {
-        self::addController();
+        $this->addController();
     }
 
     protected function getMethod () { return $this->method; }
@@ -31,7 +31,7 @@ class Dispatch extends ClassRoutes
 
         if(isset($this->parseUrlArray()[1]))
         {
-            self::addMethod();
+            $this->addMethod();
         }
     }
 
@@ -41,24 +41,24 @@ class Dispatch extends ClassRoutes
         if(method_exists($this->controller, $this->parseUrlArray()[1]))
         {
             $this->setMethod("{$this->parseUrlArray()[1]}");
-            self::addParameter();
+            $this->addParameter();
             call_user_func_array([$this->controller, $this->getMethod()], $this->getParameter());
         }
     }
-
+    
     // #Método de adição de parâmetro do controller
     private function addParameter ()
     {
         $urlArray = $this->parseUrlArray();
         $indexes = count($urlArray);
-
+        
         if($indexes > 2)
         {
             foreach($urlArray as $key => $value)
             {
                 if($key > 1)
                 {
-                    $this->setParameter($this->parameter += [$key => $value]);
+                    array_push($this->parameter, $value);
                 }
             }
         }

@@ -32,6 +32,12 @@
         </label>
         <button type="submit">Salvar</button>
     </form>
+    <?php
+    
+    echo $_SESSION["warning"];
+    $_SESSION["warning"] = "";
+    
+    ?>
     <div class="links">
         <a href="<?php echo DIRECTORYHOST."materia-cadastrar/"; ?>">Novo Matéria<a> |
         <a href="<?php echo DIRECTORYHOST."questao-cadastrar/"; ?>">Nova Questão<a>

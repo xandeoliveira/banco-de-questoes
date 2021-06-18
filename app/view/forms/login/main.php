@@ -1,5 +1,5 @@
 <main class="container-form">
-    <form class="new" action="<?php echo DIRECTORYHOST."cadastro/novo"; ?>" method="post">
+    <form class="new" action="<?php echo DIRECTORYHOST."login/entrar/"; ?>" method="post">
         <h2>Login</h2>
         <span>
             <input
@@ -8,6 +8,7 @@
                 placeholder="seu nome ou login"
                 minlength="1"
                 maxlength="60"
+                required
             >
             <img src="<?php echo DIRECTORYIMG."/human.svg"; ?>">
         </span>
@@ -18,6 +19,7 @@
             placeholder="digite sua senha"
             minlength="8"
             maxlength="60"
+            required
             >
             <img src="<?php echo DIRECTORYIMG."/key.svg"; ?>">
         </span>
@@ -25,4 +27,11 @@
 
         <a href="<?php echo DIRECTORYHOST."cadastro/"; ?>">Não sou cadastrado</a>
     </form>
+    <?php
+        if ( isset( $_SESSION["warning"] ) )
+        {
+            $_SESSION["warning"];
+        }
+        $_SESSION["warning"] = "";
+    ?>
 </main>

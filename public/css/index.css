@@ -215,7 +215,8 @@ main
 	padding: 60px 170px 60px 170px;
 }
 
-main div.path
+main div.path,
+main div.path form input
 {
 	font-family: Roboto;
 	font-weight: bold;

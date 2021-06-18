@@ -1,9 +1,18 @@
 <main>
+<?php include_once(DIRECTORYINCLUDES."/CheckLogin.php"); ?>
+
             <div class="path">
-                <a href="<?php echo DIRECTORYHOST."materia/"; ?>">Materia</a>
+                <a href="<?php echo DIRECTORYHOST."materia/"; ?>">Matéria</a>
             </div>
+            <?php
+            
+            echo $_SESSION["warning"];
+            $_SESSION["warning"] = "";
+            
+            ?>
             <section>
                 <?php
+
                 $classMateria = new App\Controller\ControllerMateria();
                 $materias = $classMateria->listGridMaterias();
                 if ( !$materias )
@@ -11,31 +20,30 @@
 
                 while ( $materia = $materias->fetch_assoc() )
                 {
-                    // $url = "url('".$materia["b_imagem_disciplina"."]')";
                     $url = "url('data:image/;base64,".base64_encode($materia["b_image_disciplina"])."');";
-                    
-                    echo '<div class="materia">
-                            <a href="<?php echo DIRECTORYHOST."assunto/"; ?>
-                                <div class="icon-materia"
-                                    style="background-image: '.$url.'"
-                                ></div>
-                            </a>
-                            <a href="<?php echo DIRECTORYHOST."assunto/"; ?>
-                                <span>'.$materia["s_nome_disciplina"].'</span>
-                            </a>
-                        </div>';
+                    $link = DIRECTORYHOST."assunto/";
+
+                    echo '<form method="post" action="'.$link.'" class="materia">
+                            <div class="icon-materia"
+                                style="background-image: '.$url.'"
+                            ></div>
+                            <input type="hidden" name="id" value="'.$materia["i_id_disciplina"].'" />
+                            <input type="submit" value="'.$materia["s_nome_disciplina"].'" />
+                        </form>';
                 }
+
+                include_once(DIRECTORYINCLUDES."/IsSuper.php");
+                echo '<div class="materia nova">
+                        <a href="'.DIRECTORYHOST.'materia-cadastrar/">
+                            <div class="icon-materia"></div>
+                        </a>
+                        <a href="'.DIRECTORYHOST.'materia-cadastrar/">
+                            <span>nova materia</span>
+                        </a>
+                    </div>';
                 
                 ?>
 
-               <div class="materia nova">
-                    <a href="<?php echo DIRECTORYHOST."materia-cadastrar/"; ?>">
-                        <div class="icon-materia"></div>
-                    </a>
-                    <a href="<?php echo DIRECTORYHOST."materia-cadastrar/"; ?>">
-                        <span>nova materia</span>
-                    </a>
-                </div>
             </section>
 
         </main>

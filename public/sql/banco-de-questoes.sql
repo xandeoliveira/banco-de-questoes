@@ -202,6 +202,16 @@ CREATE TABLE IF NOT EXISTS `db_banco_de_questoes`.`resposta_opcao` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
+CREATE VIEW login AS
+SELECT
+	`i_id_pessoa` AS 'id',
+    `s_nome_pessoa` AS 'nome',
+    `s_login_pessoa` AS 'login',
+    `s_senha_pessoa` AS 'senha',
+    `e_tipo_pessoa` AS 'tipo'
+FROM `pessoa`
+WHERE `i_id_pessoa` = 1
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

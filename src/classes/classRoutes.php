@@ -23,6 +23,7 @@ class ClassRoutes
             "assunto" => "ControllerAssunto",
             "questao" => "ControllerQuestao",
             "login" => "ControllerLogin",
+            "logout" => "ControllerLogout",
             "cadastro" => "ControllerCadastro",
             "materia-cadastrar" => "ControllerMateriaCadastro",
             "assunto-cadastrar" => "ControllerAssuntoCadastro",

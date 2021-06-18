@@ -1,104 +1,59 @@
-    <main>
+<main>
+<?php include_once(DIRECTORYINCLUDES."/CheckLogin.php"); ?>
         
         <div class="path">
-            <a href="<?php echo DIRECTORYHOST."materia/"; ?>">Matéria</a>
-            <span>></span>
-            <a href="<?php echo DIRECTORYHOST."assunto/"; ?>">Assunto</a>
-            <span>></span>
-            <a href="<?php echo DIRECTORYHOST."questao/"; ?>">Questão</a>
+            <a href="<?php echo DIRECTORYHOST."materia/"; ?>">Materia</a> >
+            <form action="<?php echo DIRECTORYHOST."assunto/"; ?>" method="post">
+                <input type="hidden" name="id" value="<?php echo $_SESSION["materia"]; ?>">
+                <input type="submit" value="Assunto">
+            </form>
         </div>
         <section>
+        <?php
+        
+        echo $_SESSION["warning"];
+        $_SESSION["warning"] = "";
+        
+        ?>
             <ul>
-                <li>
-                    <span>1 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>2 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>3 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span style="color: green;">&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>4 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>5 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>6 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>7 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>8 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>9 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>10 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>11 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>12 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>13 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-                <li>
-                    <span>14 - Começo da questão...</span>
-                    <div class="question-icons">
-                        <span>&#10003;</span>
-                    </div>
-                </li>
-
-                <a href="<?php echo DIRECTORYHOST."questao-cadastrar/"; ?>">
-                    <li class="novo">
-                        Adicionar uma questão
-                    </li>
-                </a>
+                <?php
+                
+                $classQuestao = new App\Controller\ControllerQuestao();
+                $questoes = $classQuestao->listGridQuestoes();
+    
+                if ( !$questoes )
+                    die("Não tem questões cadastradas.");
+    
+    
+                while ( $questao = $questoes->fetch_assoc() )
+                {
+                    // $url = "url('data:image/;base64,".base64_encode($assunto["b_image_assunto"])."');";
+                    $url = "";
+                    $link = DIRECTORYHOST."questao/resolver";
+    
+                    echo '<form method="post" action="'.$link.'" class="questao">
+                            <label for="submit">
+                                <li>
+                                    <span>'.$questao["enunciado"].'</span>
+                                    <div class="question-icons">
+                                        <span>&#10003;</span>
+                                    </div>
+                                </li>
+                            </label>
+                            <input type="hidden" name="id" value="'.$questao["id"].'" />
+                            <input type="submit" id="submit" value="" />
+                        </form>';
+                }
+    
+                include_once(DIRECTORYINCLUDES."/IsSuper.php");
+                echo '<a href="'.DIRECTORYHOST."questao-cadastrar/".'">
+                        <li class="novo">
+                            Adicionar uma questão
+                        </li>
+                    </a>';
+                
+                ?>
+                
             </ul>
         </section>
 

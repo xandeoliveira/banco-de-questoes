@@ -27,6 +27,7 @@ class ControllerCadastro extends ClassConnection
 
         if ( $havePostEmpty ) return;
         
+        $password = md5( $password );
         return
             "INSERT INTO `pessoa`(`s_nome_pessoa`, `s_login_pessoa`, `s_senha_pessoa`) VALUES ('$name', '$login', '$password')";
     }
@@ -39,9 +40,13 @@ class ControllerCadastro extends ClassConnection
         $inserted = $connection->query( $sql );
         $connection->close();
         
-        return $inserted
-            ? "Usuário Cadastrado."
-            : "Não foi possível completar o cadastro.";
+        if ( $inserted )
+        {
+            $_SESSION["warning"] = "Usuário cadastrado.";
+            header("Location: ".DIRECTORYHOST."login/");
+        }
+        else
+        { $_SESSION["warning"] = "Não foi possível completar o cadastro."; }
     }
 }
 

@@ -101,6 +101,12 @@
         </fieldset>
         <button type="submit">Salvar</button>
     </form>
+    <?php
+    
+    echo $_SESSION["warning"];
+    $_SESSION["warning"] = "";
+    
+    ?>
     <div class="links">
         <a href="<?php echo DIRECTORYHOST."materia-cadastrar/"; ?>">Nova Matéria<a> |
         <a href="<?php echo DIRECTORYHOST."assunto-cadastrar/"; ?>">Novo Assunto<a>
