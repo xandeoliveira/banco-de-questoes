@@ -75,11 +75,6 @@ header div.label-menu section.menu
 	background-color: var(--background-header-primary);
 }
 
-/* header div.label-menu section.menu label [name="theme"]
-{
-
-} */
-
 ul
 {
 	list-style: none;
@@ -121,7 +116,6 @@ header div.label-menu label[for="menu-check"]
 [name="menu-check"]:checked + section.menu,
 [name="menu-check"]:checked + section.menu + div.dark
 {
-	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 
@@ -249,6 +243,10 @@ footer
 	text-align: center;
 
 }
+footer p
+{
+	color: var(--color-main-primary);
+}
 
 /* MOBILE */
 @media screen and (max-width: 900px)
@@ -320,7 +318,7 @@ footer
 	}
 	main section
 	{
-		grid-template-columns: repeat(calc(var(--number-grid-columns) - 2), 1fr)	
+		grid-template-columns: repeat(calc(var(--number-grid-columns) - 2), 1fr) !important;	
 	}
 
 	main section div.materia div.icon-materia,

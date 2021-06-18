@@ -39,6 +39,10 @@ main section ul li .question-icons span
 
 	cursor: pointer;
 }
+input
+{
+	color: var(--color-main-primary);
+}
 
 main section ul li.novo
 {

@@ -42,4 +42,5 @@ main section .assunto span
 	font-weight: 500;
 	font-size: 1rem;
 	letter-spacing: 3px;
+	color: var(--color-main-primary);
 }

@@ -62,5 +62,8 @@
         
         <?php echo $this->addFooter(); ?>
     </footer>
+
+    <script src="<?php echo DIRECTORYJS."/menu.js"; ?>"></script>
+    <script src="<?php echo DIRECTORYJS."/theme.js"; ?>"></script>
 </body>
 </html>
